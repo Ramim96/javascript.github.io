@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just IT Exercise</title>
+</head>
+<body>
+    <h1>Just IT Mini Project 2</h1>
+    <h2>Interest calculator</h2>
+
+    <form id="interest_form" action="#">
+        <!-- Loan input -->
+        <label for="loan_amount">Loan in £: </label>
+        <input id="loan_amount" type="text" />
+
+        <!-- Interest rate input -->
+        <label for="interest_rate">Interest %: </label>
+        <input id="interest_rate" type="number" min="1" max="100" />
+        
+        <button id="process_interest_btn">Process</button>
+    </form>
+
+    <p id="output"></p>
+
+    <script src="./script.js" type="application/javascript"></script>
+</body>
+</html>

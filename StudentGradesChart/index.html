@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CDNs -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
+    
+    <!-- Link to author stylesheet -->
+    <link rel="stylesheet" href="./stylesheet.css" />
+
+    <title>Just IT Exercise</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-section">
+        <h1>Student grades chart</h1>
+        <p>Just IT Mini Project 4</p>
+    </header>
+
+    <article class="global-container">
+        <!-- User information section -->
+        <section class="info-section">
+            <ol type="1">
+                <p>Steps to follow:</p>
+                <li>Provide the student name and the respective grade (between 0 - 100).</li>
+                <li>Press the chart button to render the chart.</li>
+            </ol>
+        </section>
+    
+        <!-- User input section -->
+        <section class="input-section">
+            <form id="user-input" class="user-input" action="#">
+                <div class="input-container student-name-container">
+                    <label class="name-label" for="user-name">Student</label>
+                    <input id="user-name" class="input user-input" type="text" />
+                </div>
+
+                <div class="input-container student-grade-container">
+                    <label class="grade-label" for="user-input">Grade</label>
+                    <input id="user-grade" class="input user-input" type="text" />
+                </div>
+    
+                <div class="btn-section">
+                    <button id="submit-name-btn" class="btn submit-btn">Submit</button>
+                    <button id="generate-chart-btn" class="btn generate-btn">Generate</button>
+                </div>
+            </form>
+        </section>
+    
+        <!-- Chart section -->
+        <section class="output-section">
+            <div id="chart-container" class="chart-container"></div>
+        </section>
+    </article>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="./script.js" type="application/javascript"></script>
+</body>
+</html>

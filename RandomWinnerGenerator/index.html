@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CDNs -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet" />
+
+    <!-- Link to author stylesheet -->
+    <link rel="stylesheet" href="./stylesheet.css" type="text/css" />
+
+    <title>Just IT Exercise</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-title">
+        <h1>Random winner generator</h1>
+        <p>Just IT Mini Project 3</p>
+    </header>
+
+    <article class="global-container">
+        <!-- User information section -->
+        <section class="info-section">
+            <article class="user-info">
+                <ol type="1">
+                    <p>Here are the steps to follow:</p>
+                    <li>Provide the input as many times as you want, but at every input press the submit button.</li>
+                    <li>After completing the input process, press the generate button.</li>
+                    <li>One input, of the many provided, will be randomly printed.</li>
+                </ol>
+            </article>
+        </section>
+        
+        <!-- User input section -->
+        <section class="proj-section">
+            <form id="user-form" class="user-input" action="#">
+                <div class="input-section">
+                    <label class="input-label" for="user-input">Text</label>
+                    <input id="user-input" class="user-input" type="text" />
+                </div>
+        
+                <div class="btn-section">
+                    <button id="submit-btn" class="btn submit-btn">Submit</button>
+                    <button id="generate-btn" class="btn generate-btn">Generate</button>
+                </div>
+            </form>
+        </section>
+        
+        <!-- Result output section -->
+        <section class="output-section">
+            <p id="output" class="output"></p>
+        </section>
+    </article>
+
+    <!-- Scripts -->
+    <script src="./script.js" type="application/javascript"></script>
+</body>
+</html>

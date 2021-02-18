@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CDNs -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet" />
+
+    <!-- Author's stylehseet -->
+    <link rel="stylesheet" href="./stylesheet.css" type="text/css" />
+
+    <title>Just IT Mini Project</title>
+</head>
+<body>
+    <section class="global-container">
+        <!-- Initial welcome page -->
+        <header id="game-title-header" class="game-title-container">
+            <p class="title">Guess The Word</p>
+
+            <button type="button" id="play-btn" class="play-btn">Play</button>
+        </header>
+
+        <!-- Global game container -->
+        <section class="game-container">
+            <div class="guess-string-container">
+                <p id="output-string" class="output-string"></p>
+            </div>
+
+            <!-- User lifes container -->
+            <div class="user-life-container">
+                <p id="user-life" class="user-life">Life: <span id="life" class="life"></span></p>
+            </div>
+
+            <!-- Error message feedback container -->
+            <div class="output-msg-container">
+                <p id="msg" class="msg"></p>
+            </div>
+            
+            <!-- User letter input container -->
+            <div class="input-container">
+                <input type="text" id="user-input" name="user-input" class="user-input" />
+                
+                <button type="button" id="guess-btn" class="guess-btn">Guess</button>
+            </div>
+
+            <!-- Message win container -->
+            <div id="win-msg-container" class="win-msg-container">
+                <p id="win-msg" class="win-msg">Congrats, you WON!</p>
+                
+                <button id="restart-win-btn" class="restart-btn">Restart</button>
+            </div>
+
+            <!-- Message lose container -->
+            <div id="lose-msg-container" class="lose-msg-container">
+                <p id="lose-msg" class="lose-msg">Sorry, you Lost!</p>
+                
+                <button id="restart-lose-btn" class="restart-btn">Restart</button>
+            </div>
+        </section>
+    </section>
+    
+    <!-- My scripts -->
+    <script src="./gameLogic.js" type="application/javascript"></script>
+</body>
+</html>
