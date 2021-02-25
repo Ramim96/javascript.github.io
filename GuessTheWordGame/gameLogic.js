@@ -1,6 +1,7 @@
 //Array of words
-let wordsArray = ["milk", "lawyer", "runner", "taxi"];
-let playerLife = 4;
+let wordsArray = ["milk", "lawyer", "runner", "taxi", "tower", "shoes"];
+let playerLife = 8;
+let lettersSubmit = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"];
 
 //Print win message
 let printWinMsg = () => {
@@ -168,17 +169,17 @@ window.onload = (event) => {
                 return;
             } 
         }
-        else {
-            playerLife = updateLife(playerLife);
+        // else {
+        //     playerLife = updateLife(playerLife);
 
-            if(playerLife === 0) { 
-                printLostMsg();
+        //     if(playerLife === 0) { 
+        //         printLostMsg();
 
-                return;
-            }
+        //         return;
+        //     }
 
-            return;
-        }
+        //     return;
+        // }
     });
 }
 

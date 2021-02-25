@@ -65,7 +65,7 @@ section.game-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     margin: 0;
     padding: 0;
     border: none;
@@ -141,6 +141,7 @@ div.output-msg-container p.msg {
     height: auto;
     font-family: 'Yusei Magic', sans-serif;
     font-size: 2em;
+    text-align: center;
     color: rgb(211, 15, 15);
 }
 
