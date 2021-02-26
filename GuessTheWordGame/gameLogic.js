@@ -19,6 +19,14 @@ let printLostMsg = () => {
     return;
 }
 
+//Provide letters hint
+let printLettersHint = () => {
+    let lettersHint = document.getElementById("letters-array-container");
+    lettersHint.style.top = "50%";
+
+    return;
+}
+
 //Generate visual letter slots for the DOM
 let generateSlots = (wordToGuess) => {
     let slotsArray = [];
@@ -28,6 +36,40 @@ let generateSlots = (wordToGuess) => {
     }
 
     return slotsArray;
+}
+
+//Populate letters hint section with letters
+let generateLettersHint = () => {
+    let lettersHint = document.getElementById("letters-array-item");
+
+    lettersSubmit.forEach(element => {
+        let p = document.createElement("p");
+        p.classList.add("letter");
+        p.innerText = element;
+        p.id = element;
+
+        lettersHint.appendChild(p);
+    });
+}
+
+//Hide letters hint
+let hideLettersHint = () => {
+    let lettersHint = document.getElementById("letters-array-container");
+    lettersHint.style.top = "-50%";
+
+    return;
+}
+
+//Update letters hint
+let updateLettersHint = (letterId, isLetter) => {
+    let letter = document.getElementById(letterId);
+
+    if(isLetter) {
+        letter.classList.add("letter-success");
+    }
+    else {
+        letter.classList.add("letter-error");
+    }
 }
 
 //Render/Update user life on the DOM
@@ -129,13 +171,14 @@ window.onload = (event) => {
 
     //Generate and print the letter slots to be rendered on the DOM
     let letterSlots = generateSlots(wordToGuess);
+    //Generate letters hints
+    generateLettersHint();
 
     printLetterSlots(letterSlots);
     printPlayerLife(playerLife); 
 
     //Validate the input and process the user letter guess
     let guessBtn = document.getElementById("guess-btn");
-
     guessBtn.addEventListener("click", (event) => {
         event.preventDefault();
 
@@ -152,12 +195,13 @@ window.onload = (event) => {
         if(validationOutcome) {
             if(wordToGuess.includes(userGuess)) {
                 updateSlots(letterSlots, wordToGuess, userGuess);
-                
                 checkSlots(letterSlots);
+                updateLettersHint(userGuess, true);
                 
                 return;
             }
             else {
+                updateLettersHint(userGuess, false);
                 playerLife = updateLife(playerLife);
 
                 if(playerLife === 0) { 
@@ -169,17 +213,14 @@ window.onload = (event) => {
                 return;
             } 
         }
-        // else {
-        //     playerLife = updateLife(playerLife);
+    });
 
-        //     if(playerLife === 0) { 
-        //         printLostMsg();
+    //Access the letters hint section
+    let lettersBtn = document.getElementById("letters-array-btn");
+    lettersBtn.addEventListener("click", (event) => {
+        event.preventDefault();
 
-        //         return;
-        //     }
-
-        //     return;
-        // }
+        printLettersHint();
     });
 }
 
@@ -208,4 +249,12 @@ restartLoseBtn.addEventListener("click", (event) => {
     event.preventDefault();
 
     location.reload();
+});
+
+//Close letters hint section
+let closeBtn = document.getElementById("close-btn");
+closeBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    hideLettersHint();
 });

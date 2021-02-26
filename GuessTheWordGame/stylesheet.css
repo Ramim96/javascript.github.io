@@ -64,7 +64,7 @@ header.game-title-container button.play-btn {
 section.game-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0;
     padding: 0;
@@ -107,7 +107,7 @@ section.game-container div.user-life-container {
     padding: 0;
     border: none;
     width: 100%;
-    height: 15%;
+    height: 10%;
     font-family: 'Yusei Magic', sans-serif;
     font-size: 1.8em;
     color:rgba(0, 153, 51, 1);
@@ -140,7 +140,7 @@ div.output-msg-container p.msg {
     width: auto;
     height: auto;
     font-family: 'Yusei Magic', sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
     color: rgb(211, 15, 15);
 }
@@ -155,7 +155,7 @@ section.game-container div.input-container {
     padding: 0;
     border: none;
     width: 100%;
-    height: 25%;
+    height: 40%;
 }
 
 div.input-container input.user-input {
@@ -164,7 +164,7 @@ div.input-container input.user-input {
     border: solid thin transparent;
     border-radius: 5px;
     width: 50%;
-    height: 35%;
+    height: 30%;
     text-align: center;
     font-family: 'Yusei Magic', sans-serif;
     font-size: 1.2em;
@@ -174,10 +174,27 @@ div.input-container button.guess-btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 2% 0;
     border: solid thin transparent;
     border-radius: 5px;
     width: 50%;
-    height: 40%;
+    height: 25%;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 0.2em;
+    color: rgba(247, 235, 225, 1);
+    background-color: rgba(36, 32, 56, 1);
+}
+
+div.input-container button.letter-array-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 0;
+    border: solid thin transparent;
+    border-radius: 5px;
+    width: 50%;
+    height: 25%;
     font-family: 'Yusei Magic', sans-serif;
     font-size: 1.5em;
     letter-spacing: 0.2em;
@@ -275,6 +292,66 @@ div.lose-msg-container button.restart-btn {
     background-color: rgba(36, 32, 56, 1);
 }
 
+/* Letters array section */
+section.game-container div.letters-array-container {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: solid thin transparent;
+    border-radius: 5px;
+    width: 95%;
+    height: 50%;
+    background-color: rgba(36, 32, 56, 1);
+    transform: translate(-50%, -50%);
+    transition: 0.85s all;
+} 
+
+div.letters-array-container div.letters-array-item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 1.1em;
+}
+
+div.letters-array-item p.letter {
+    margin: 2%;
+    font-size: 1.3em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+div.letters-array-item p.letter-success {
+    color: rgba(0, 153, 51, 1);
+}
+
+div.letters-array-item p.letter-error {
+    color: rgba(255, 26, 26, 1);
+}
+
+div.letters-array-container button.close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4% 0;
+    padding: 0;
+    border: solid thin transparent;
+    border-radius: 4px;
+    width: 35%;
+    height: 15%;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 1.2em;
+    color: rgba(36, 32, 56, 1);
+    background-color: rgba(202, 196, 206, 1);
+}
+
 /* Responsive style */
 @media only screen and (min-width: 360px) {
     
@@ -289,9 +366,16 @@ div.lose-msg-container button.restart-btn {
     /* User input section */
     div.input-container input.user-input {
         width: 35%;
+        height: 25%;
     }
 
     div.input-container button.guess-btn {
+        margin: 1% 0;
+        width: 35%;
+    }
+
+    div.input-container button.letter-array-btn {
+        margin: 1% 0;
         width: 35%;
     }
 
@@ -303,6 +387,11 @@ div.lose-msg-container button.restart-btn {
     /* Lose message section */
     section.game-container div.lose-msg-container {
         width: 70%;
+    }
+
+    /* Letters array section */
+    section.game-container div.letters-array-container {
+        width: 85%;
     }
 }
 
@@ -314,15 +403,22 @@ div.lose-msg-container button.restart-btn {
 
     /* User input section */
     section.game-container div.input-container {
-        width: 100%;
-        height: 30%;
+        height: 40%;
     }
 
     div.input-container input.user-input {
+        margin: 1% 0;
         width: 25%;
+        height: 25%;
     }
 
     div.input-container button.guess-btn {
+        margin: 1% 0;
+        width: 25%;
+    }
+
+    div.input-container button.letter-array-btn {
+        margin: 1% 0;
         width: 25%;
     }
 
@@ -335,6 +431,11 @@ div.lose-msg-container button.restart-btn {
     section.game-container div.lose-msg-container {
         width: 60%;
     }
+
+    /* Letters array section */
+    section.game-container div.letters-array-container {
+    width: 75%;
+}
 }
 
 @media only screen and (min-width: 768px) {
@@ -357,6 +458,10 @@ div.lose-msg-container button.restart-btn {
         width: 20%;
     }
 
+    div.input-container button.letter-array-btn {
+        width: 20%;
+    }
+
     /* Win message section */
     section.game-container div.win-msg-container {
         width: 50%;
@@ -365,6 +470,11 @@ div.lose-msg-container button.restart-btn {
     /* Lose message section */
     section.game-container div.lose-msg-container {
         width: 50%;
+    }
+
+    /* Letters array section */
+    section.game-container div.letters-array-container {
+        width: 55%;
     }
 }
 
@@ -386,11 +496,20 @@ div.lose-msg-container button.restart-btn {
     }
 
     /* User input section */
+    section.game-container div.input-container {
+        height: 45%;
+    }
+
     div.input-container input.user-input {
         width: 15%;
     }
 
     div.input-container button.guess-btn {
+        margin: 0;
+        width: 15%;
+    }
+
+    div.input-container button.letter-array-btn {
         width: 15%;
     }
 
@@ -401,6 +520,11 @@ div.lose-msg-container button.restart-btn {
 
     /* Lose message section */
     section.game-container div.lose-msg-container {
+        width: 40%;
+    }
+
+    /* Letters array section */
+    section.game-container div.letters-array-container {
         width: 40%;
     }
 }
@@ -417,7 +541,7 @@ div.lose-msg-container button.restart-btn {
 
     /* User input section */
     section.game-container div.input-container {
-        height: 35%;
+        height: 40%;
     }
 
     div.input-container input.user-input {
@@ -425,6 +549,10 @@ div.lose-msg-container button.restart-btn {
     }
 
     div.input-container button.guess-btn {
+        width: 12%;
+    }
+
+    div.input-container button.letter-array-btn {
         width: 12%;
     }
 
