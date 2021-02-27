@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 /* Reset DOM */
 * {
@@ -9,15 +9,6 @@
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(111, 156, 235, 0.2);
-}
-
 /* Global container style */
 div.global-container {
     position: relative;
@@ -25,32 +16,31 @@ div.global-container {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    border: none;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(111, 156, 235, 0.4);
+    background-color: rgb(228, 228, 228);
 }
 
 /* Header style */
 div.global-container div.header {
-    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 0 2% 0;
-    padding: 0;
     width: 100%;
     height: 10%;
-    background-color: rgb(20, 27, 65);
 }
 
+
 div.header p.header-title {
-    font-family: 'Varela Round', sans-serif;
-    font-size: 1.5em;
-    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
 }
 
 /* Application container style */
@@ -59,145 +49,180 @@ div.global-container div.app-container {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 0;
-    padding: 0;
     width: 100%;
     height: 90%;
+}
+
+/* Budget container style */
+div.app-container div.budget-container {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 10%;
+}
+
+div.budget-container p.budget-title, p.budget {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+div.budget-container p.budget-title {
+    justify-content: flex-start;
+    margin: 0 2%;
+    width: 60%;
+}
+
+div.budget-container p.budget {
+    justify-content: flex-end;
+    margin: 0 2%;
+    width: 40%;
+}
+
+div.budget-container p.positive {
+    color: rgb(15, 124, 3);
+}
+
+div.budget-container p.negative {
+    color: rgb(189, 27, 6);
+}
+
+div.budget-container p.neutral {
+    color: rgb(0, 0, 0, 1);
 }
 
 /* Report container style */
 div.app-container div.report-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2% 0;
-    padding: 0;
-    border-radius: 5px;
+    flex-direction: row;
     width: 95%;
-    height: 20%;
-    background-color: rgb(236, 154, 30);
+    height: 12%;
+    background-color: rgb(255, 255, 255);
 }
 
-div.report-container div.budget-container {
-    display: flex;
-    flex-direction: row;
+div.report-container p.earning, p.expense {
+     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2% 0;
-    border-radius: 5px;
-    width: 90%;
-    height: 45%;
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-div.budget-container p.budget-title, p.budget {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
+    width: 100%;
     height: 100%;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 1.2em;
-    color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
-div.report-container div.report {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 2% 0;
-    border-radius: 5px;
-    width: 90%;
-    height: 45%;
-    background-color: rgba(255, 255, 255, 0.4);
+div.report-container p.earning {
+    border-right: 1px solid rgba(0, 0, 0, 0.4);
+    color: rgb(15, 124, 3);
 }
 
-div.report div.earning-container, div.expense-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 90%;
+div.report-container p.expense {
+    border-left: 1px solid rgba(0, 0, 0, 0.4);
+    color: rgb(189, 27, 6);
 }
 
-div.report div.earning-container p.earning, div.expense-container p.expense {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 100%;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 1.2em;
-    color: rgb(0, 0, 0);
-}
-
-div.report div.earning-container p.earning {
-    border-left: 10px solid rgb(0, 153, 51);
-}
-
-div.report div.expense-container p.expense {
-    border-left: 10px solid rgb(204, 0, 0);
-}
-
-/* Items container style */
+/* Items list section style */
 div.app-container div.items-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2% 0 0 0;
+    width: 95%;
+    height: 40%;
+}
+
+div.items-list-container p.items-list-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 20%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* Items list container style */
+div.items-list-container div.items-list {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     margin: 2% 0;
     padding: 0;
-    border-radius: 5px;
-    width: 95%;
-    height: 40%;
-    background-color: rgb(20, 27, 65);
+    width: 100%;
+    height: 70%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
     overflow-y: scroll;
 }
 
 div.items-list-container div.item {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 2% 0;
-    padding: 0;
-    border-radius: 5px;
     width: 90%;
-    height: 7vh;
-    background-color: rgba(255, 255, 255, 0.4);
+    height: 6vh;
+    background-color: rgb(255, 255, 255);
+}
+
+div.items-list-container div.border-left-red {
+    border-left: 6px solid rgb(189, 27, 6);
+}
+
+div.items-list-container div.border-left-green {
+    border-left: 6px solid rgb(15, 124, 3);
 }
 
 div.item p.item-name {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 70%;
+    margin: 0 0 0 5%;
+    width: 80%;
     height: 100%;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 1.2em;
-    letter-spacing: 0.1em;
-    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 }
 
-div.item i {
-    font-size: 2em;
-    color: rgb(204, 0, 0);
+div.item i.fa-times {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+    background-color: rgba(255, 75, 51, 0.9);
+}
+
+/* Transaction input form style */
+div.app-container div.item-input-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    height: 35%;
+}
+
+div.item-input-form-container p.item-input-form-container-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 20%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 /* Input form style */
-div.app-container div.item-input-form-container {
-    margin: 2% 0 0 0;
-    padding: 0;
-    border-radius: 5px;
-    width: 95%;
-    height: 33%;
-    background-color: rgb(48, 107, 172);
-}
-
 div.item-input-form-container form.input-form {
     width: 100%;
     height: 100%;
@@ -206,8 +231,7 @@ div.item-input-form-container form.input-form {
 form.input-form div.input-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    margin: 2% 0 0 0;
     width: 100%;
     height: 60%;
 }
@@ -215,42 +239,50 @@ form.input-form div.input-container {
 div.input-container input.item-name, input.item-price {
     margin: 0 2%;
     padding: 2%;
-    width: 38%;
-    height: 30%;
-    font-family: 'Varela Round', sans-serif;
+    width: 46%;
+    height: 35%;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1em;
-    outline: none;
+    font-weight: bold;
 }
 
-.error {
+input.error {
     border: 2px solid rgb(204, 0, 0);
 }
 
 div.input-container select.transaction-type {
-    width: 80%;
-    height: 30%;
-    font-family: 'Varela Round', sans-serif;
+    margin: 0 2%;
+    width: 96%;
+    height: 35%;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1em;
+    font-weight: bold;
     outline: none;
 }
 
 form.input-form div.btn-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 40%;
 }
 
 div.btn-container button.btn {
-    margin: 0 2%;
-    border-radius: 4px;
-    width: 40%;
-    height: 60%;
-    font-family: 'Varela Round', sans-serif;
+     width: 45%;
+    height: 65%;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1em;
-    background-color: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
     outline: none;
+}
+
+div.btn-container button.submit-btn {
+    background-color: rgba(15, 124, 3, 0.8);
+}
+
+div.btn-container button.reset-btn {
+    background-color: rgba(189, 27, 6, 0.8);
 }
 
 /* Web-kit scrollbar */
@@ -266,79 +298,29 @@ div.btn-container button.btn {
 
 ::-webkit-scrollbar-thumb
 {
-	border-radius: 15px;
-    background-color: rgb(48, 107, 172);
+	border-radius: 10px;
+    background-color: rgb(26, 26, 26);
 }
 
 /* Media queries */
 @media only screen and (min-width: 360px) {
-    /* Application container style */
-    div.global-container div.app-container {
-        width: 95%;
-    }
+    
 }
 
 @media only screen and (min-width: 460px) {
-    /* Application container style */
-    div.global-container div.app-container {
-        width: 85%;
-        height: 85%;
-    }
-
-    /* Items container style */
-    div.items-list-container div.item {
-        height: 8vh;
-    }
-
-    div.item p.item-name {
-        font-size: 1.3em;
-    }
+   
 }
 
 @media only screen and (min-width: 576px) {
-    /* Global container style */
-    div.global-container {
-        border: solid transparent;
-        border-radius: 5px;
-        width: 55vw;
-        height: 90vh;
-    }
-
-    /* Items container style */
-    div.items-list-container div.item {
-        height: 7vh;
-    }
-
-    div.item p.item-name {
-        font-size: 1.2em;
-    }
-
-    div.item i {
-        font-size: 1.7em;
-    }
-
-    /* Input form style */
-    div.input-container input.item-name, input.item-price {
-        height: 35%;
-    }
-
-    div.input-container select.transaction-type {
-        height: 35%;
-    }
+    
 }
 
 @media only screen and (min-width: 768px) {
-    /* Global container style */
-    div.global-container {
-        width: 45vw;
-    }
+    
 }
 
 @media only screen and (min-width: 992px) {
-     /* Global container style */
-    div.global-container {
-        width: 35vw;
-    }
+    
 }
 
 @media only screen and (min-width: 1024px) {

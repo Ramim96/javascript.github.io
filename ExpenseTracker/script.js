@@ -1,11 +1,11 @@
 //Global initial budget
-let initialBudget = 2000.00;
+let initialBudget = 0.00;
 
 //Set initial budget 
 const setBudget = () => {
     //DOM element
     let budget = document.getElementById("budget");
-    budget.innerText = initialBudget.toString();
+    budget.innerText = parseFloat(initialBudget).toFixed(2);
 
     return;
 }
@@ -24,9 +24,39 @@ const updateBudget = () => {
 
     //Estimate difference between earning and expenses
     estimatedBudget = earning + expense;
+
+    //Assert estimated budget
+    if(estimatedBudget > 0) {
+        //Remove previous styles class
+        budget.classList.remove("positive");
+        budget.classList.remove("negative");
+        budget.classList.remove("neutral");
+
+        //Insert new style class
+        budget.classList.add("positive");
+    }
+    else {
+        //Remove previous styles class
+        budget.classList.remove("positive");
+        budget.classList.remove("negative");
+        budget.classList.remove("neutral");
+
+        //Insert new style class
+        budget.classList.add("negative");
+    }
+
+    if(estimatedBudget == 0) {
+        //Remove previous styles class
+        budget.classList.remove("positive");
+        budget.classList.remove("negative");
+        budget.classList.remove("neutral");
+
+        //Insert new style class
+        budget.classList.add("neutral");
+    }
     
     budget.innerText = "";
-    budget.innerText = initialBudget + estimatedBudget;
+    budget.innerText = Math.abs(parseFloat(initialBudget + estimatedBudget).toFixed(2));
 
     return;
 }
@@ -52,12 +82,12 @@ const updateReport = (itemPrice, itemTransaction) => {
     
     //Assert item-transaction
     if(itemTransaction === "earning") {
-        earningValue += itemPrice;
+        earningValue += Math.abs(parseFloat(itemPrice));
         earning.innerText = earningValue;
     }
 
     if(itemTransaction === "expense") {
-        expenseValue += itemPrice;
+        expenseValue += Math.abs(parseFloat(itemPrice));
         expense.innerText = expenseValue;
     }
 
@@ -70,6 +100,14 @@ const createItem = (itemName, itemPrice, itemTransaction, itemsList) => {
     let div = document.createElement("div");
     div.id = itemName;
     div.classList.add("item");
+
+    if(itemTransaction === "earning") {
+        div.classList.add("border-left-green");
+    }
+    
+    if(itemTransaction === "expense") {
+        div.classList.add("border-left-red");
+    }
 
     //Create p element
     let p = document.createElement("p");
@@ -245,21 +283,4 @@ window.onload = () => {
             return;
         }
     });
-
-    //Handle item deletion process
-    //DOM element
-    // let deleteBtn = document.querySelectorAll("#delete-btn")
-    // deleteBtn.forEach((btn) => {
-    //     btn.addEventListener("click", (event) => {
-    //         let itemName = event.target.parentNode.id;
-
-    //         window.localStorage.removeItem(itemName);
-
-    //         //Update items-list container
-    //         updateItemsList();  
-
-    //         return;
-    //     });
-    // });
-    
 }

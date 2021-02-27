@@ -24,35 +24,35 @@
 
         <!-- Application container -->
         <div class="app-container">
-            <div class="report-container">
-                <div class="budget-container">
-                    <p class="budget-title">Budget £</p>
-                    <p id="budget" class="budget"></p>
-                </div>
+            <div class="budget-container">
+                <p class="budget-title">Your Budget £</p>
+                <p id="budget" class="budget"></p>
+            </div>
 
-                <!-- Report -->
-                <div class="report">
-                    <div class="earning-container">
-                        <p id="earning" class="earning"></p>
-                    </div>
-                    <div class="expense-container">
-                        <p id="expense" class="expense"></p>
-                    </div>
-                </div>
+            <!-- Report -->
+            <div class="report-container">
+                <p id="earning" class="earning"></p>
+                <p id="expense" class="expense"></p>
             </div>
 
             <!-- Items -->
-            <div id="items-list" class="items-list-container">
-                <!-- <div class="item">
-                    <p class="item-name"></p>
-                    <input name="item-price" value="2.50" hidden />
-                    <input name="item-transaction" value="expense" hidden />
-                    <i class="fas fa-times"></i>
-                </div> -->
+            <div id="items-list-container" class="items-list-container">
+                <p class="items-list-title">Your transactions</p>
+                
+                <div id="items-list" class="items-list">
+                    <!-- <div class="item border-left-red">
+                        <p class="item-name">Bread</p>
+                        <input name="item-price" value="2.50" hidden />
+                        <input name="item-transaction" value="expense" hidden />
+                        <i class="fas fa-times"></i>
+                    </div> -->
+                </div>
             </div>
 
             <!-- Input form -->
             <div class="item-input-form-container">
+                <p class="item-input-form-container-title">New transaction</p>
+
                 <form action="#" class="input-form">
                     <div class="input-container">
                         <input type="text" id="item-name" class="item-name" placeholder="Item" />
