@@ -9,6 +9,12 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(228, 228, 228);
+}
+
 /* Global container style */
 div.global-container {
     position: relative;
@@ -308,25 +314,43 @@ div.btn-container button.reset-btn {
 }
 
 @media only screen and (min-width: 460px) {
-   
+   /* Global container style */
+    div.global-container {
+        width: 70vw;
+    }
 }
 
 @media only screen and (min-width: 576px) {
-    
+    /* Global container style */
+    div.global-container {
+        width: 55vw;
+    }
 }
 
 @media only screen and (min-width: 768px) {
-    
+    /* Global container style */
+    div.global-container {
+        width: 40vw;
+    }
 }
 
 @media only screen and (min-width: 992px) {
-    
+    /* Global container style */
+    div.global-container {
+        width: 35vw;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
-    
+    /* Global container style */
+    div.global-container {
+        width: 30vw;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
-    
+    /* Global container style */
+    div.global-container {
+        width: 25vw;
+    }
 }
